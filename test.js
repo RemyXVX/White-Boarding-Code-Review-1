@@ -18,30 +18,6 @@
 
 // Output: [7, 9, "hi", 12, 53]
 
-function newString(string) {
-  let result ="";
-  let addition = 1;
-  for(let i = 0; string.length; i++) {
-    if (string[1] === string [i=1]) {
-      addition++;
-    } else {
-      result += addition + string[1];
-      addition = 1;
-    }
-  }
-return result;
-}
-
-console.log(newString("aaabccddddde"))
-
-// Question #3: Compressing Strings
-// Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
-
-// Example
-// Input: "aaabccdddda"
-
-// Output: "3ab2c4da"
-
 const removeDup = (array) => {
   let result = [];
   for (let i = 0; i < array.length; i++) {
@@ -60,6 +36,32 @@ const removeDup = (array) => {
   return result;
 }
 
+// Question #3: Compressing Strings
+// Write an algorithm that takes a string with repeated characters and compresses them, using a number to show how many times the repeated character has been compressed. For instance, aaa would be written as 3a. Solve the problem with and without recursion.
+
+// Example
+// Input: "aaabccdddda"
+
+// Output: "3ab2c4da"
+
+
+function newString(string) {
+  let result ="";
+  let addition = 1;
+  for(let i = 0; string.length; i++) {
+    if (string[1] === string [i=1]) {
+      addition++;
+    } else {
+      result += addition + string[1];
+      addition = 1;
+    }
+  }
+return result;
+}
+
+console.log(newString("aaabccddddde"))
+
+
 // Question #4: Checking for Uniqueness
 // Write an algorithm that determines whether all the elements in a string are unique. You may not convert the string into an array or use array methods to solve this problem. The algorithm should return a boolean.
 
@@ -72,7 +74,19 @@ const removeDup = (array) => {
 
 // Output: true
 
+const uniqueCharacters = (string) => {
+  let characters = {};
+  for (let index = 0; index < string.length; index++) { 
+    let character = string.charAt(index);
+    if(characters[character]) {
+      return false;
+    }
+    characters[character] = true;
+  }
+  return true
+}
 
+console.log(uniqueCharacters("hello"))
 
 // Question #5: Array Sorting
 // Write an algorithm that sorts an array without using the sort() method. There are many different sorting algorithms — take the time to read about the following:
