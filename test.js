@@ -8,6 +8,20 @@
 
 // Output: "Jasmine%20Ann%20Jones"
 
+const url = (string) => {
+  let array = string.split(''); //convert the string of characters into an array
+  let result = []; //have an empty array to store the characters after conversion
+
+  while (array.length > 0) { //creating a loop
+    let character = array.pop(); //will pop characters in the loop
+    if (character === ' ') { //if characters are a space it will shift
+      result.unshift('%20'); //return %20 in that space
+    } else {
+      result.unshift(character); //else just return the character
+    }
+  }
+  return result.join(''); //then joined back together into a string 
+}
 
 
 // Question #2: Array Deduping
